@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WordCloud Diario</title>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+
+        #container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #wordcloud_img {
+            max-width: 100%;
+            max-height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>WordCloud del día <span id="fecha_actual"></span></h1>
+        <img id="wordcloud_img" src="" alt="WordCloud del día {fecha_actual}">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var fecha_actual = new Date().toISOString().slice(0, 10);
+            document.getElementById("fecha_actual").textContent = fecha_actual;
+            var img = document.getElementById("wordcloud_img");
+            img.src = "wordcloud/WordCloud - " + fecha_actual + ".png";
+            img.alt = img.alt.replace("{fecha_actual}", fecha_actual);
+        });
+    </script>
+</body>
+</html>
+

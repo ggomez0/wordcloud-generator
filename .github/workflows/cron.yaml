@@ -1,0 +1,36 @@
+name: Generar WordCloud Diario
+
+on:
+  schedule:
+    - cron: '3 3 * * *' 
+
+jobs:
+  generate_wordcloud:
+    runs-on: ubuntu-latest
+
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+
+    - name: Configurar Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+
+    - name: Instalar dependencias
+      run: |
+        pip install beautifulsoup4 requests nltk wordcloud matplotlib
+
+    - name: Ejecutar tarea de generación de WordCloud
+      run: |
+        python wordcloudgenerator.py
+
+    - name: Subir WordCloud generada
+      run: |
+        git add .
+        git commit -m "WordCloud generado diario"
+        git push origin master
+
