@@ -34,6 +34,8 @@ jobs:
 
     - name: Subir WordCloud generada
       run: |
+        git config --global user.email "gaspargomez2000@outlook.com"
+        git config --global user.name "ggomez0"
         git add .
         git commit -m "WordCloud generado diario"
         git push origin master
