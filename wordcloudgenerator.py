@@ -7,8 +7,12 @@ from datetime import datetime
 import nltk
 import os
 
-# Set the NLTK data path to a directory accessible by your script
-nltk_data_path = './nltk_data'  # Replace with the actual path
+# Set the NLTK data path to the directory containing the "nltk_data" folder
+nltk_data_path = os.path.join(os.path.dirname(__file__), 'nltk_data')
+
+# Create the "nltk_data" directory if it doesn't exist
+if not os.path.exists(nltk_data_path):
+    os.makedirs(nltk_data_path)
 
 # Download the punkt tokenizer data if not already available
 try:
