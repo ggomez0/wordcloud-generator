@@ -1,11 +1,10 @@
 from bs4 import BeautifulSoup
 import requests
+from nltk.tokenize import word_tokenize
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from datetime import datetime
-from nltk.tokenize import word_tokenize
 
-# Rest of your script...
 # URL de Infobae y EL PAIS
 url_infobae = "https://www.infobae.com/ultimas-noticias/"
 url_elpais = "https://elpais.com/argentina/"

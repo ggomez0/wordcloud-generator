@@ -24,6 +24,11 @@ jobs:
       run: |
         pip install beautifulsoup4 requests nltk wordcloud matplotlib
 
+    - name: Descargar datos de NLTK
+      run: |
+        nltk.download('punkt')
+        python -m nltk.downloader punkt stopwords
+
     - name: Ejecutar tarea de generación de WordCloud
       run: |
         python wordcloudgenerator.py
