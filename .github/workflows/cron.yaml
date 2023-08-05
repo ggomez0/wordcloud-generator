@@ -2,7 +2,7 @@ name: Generar WordCloud Diario
 
 on:
   schedule:
-    - cron: '*/1 * * * *' 
+    - cron: '3 3 * * *' 
 
 jobs:
   generate_wordcloud:

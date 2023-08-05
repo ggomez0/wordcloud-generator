@@ -5,12 +5,16 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from datetime import datetime
 import nltk
+import os
+
+# Set the NLTK data path to a directory accessible by your script
+nltk_data_path = './nltk_data'  # Replace with the actual path
 
 # Download the punkt tokenizer data if not already available
 try:
-    nltk.data.find('tokenizers/punkt')
+    nltk.data.find('tokenizers/punkt', path=nltk_data_path)
 except LookupError:
-    nltk.download('punkt')
+    nltk.download('punkt', download_dir=nltk_data_path)
 
 # Now import and use word_tokenize
 from nltk.tokenize import word_tokenize
