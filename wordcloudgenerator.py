@@ -4,6 +4,16 @@ from nltk.tokenize import word_tokenize
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from datetime import datetime
+import nltk
+
+# Download the punkt tokenizer data if not already available
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+# Now import and use word_tokenize
+from nltk.tokenize import word_tokenize
 
 # URL de Infobae y EL PAIS
 url_infobae = "https://www.infobae.com/ultimas-noticias/"
