@@ -1,4 +1,5 @@
 # WordCloud Generator
+[![Generar WordCloud Diario](https://github.com/ggomez0/WordCloud-Generator/actions/workflows/cron.yml/badge.svg)](https://github.com/ggomez0/WordCloud-Generator/actions/workflows/cron.yml)
 
 ## Descripción
 
