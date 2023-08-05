@@ -6,8 +6,11 @@ from datetime import datetime
 import nltk
 import os
 
-# Add the current directory to the NLTK data path
-nltk.data.path.append(os.path.dirname(os.path.abspath(__file__)))
+# Set the NLTK data path to the directory where you copied all the NLTK data files
+nltk_data_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'nltk_data')
+
+# Set the NLTK data path using nltk.data.path
+nltk.data.path.append(nltk_data_path)
 
 # Now import and use word_tokenize
 from nltk.tokenize import word_tokenize
