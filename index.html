@@ -40,7 +40,7 @@
             var fecha_actual = new Date().toISOString().slice(0, 10);
             document.getElementById("fecha_actual").textContent = fecha_actual;
             var img = document.getElementById("wordcloud_img");
-            img.src = "wordcloud/WordCloud - " + fecha_actual + ".png";
+            img.src = "wordcloud/Wordcloud - " + fecha_actual + ".png";
             img.alt = img.alt.replace("{fecha_actual}", fecha_actual);
         });
     </script>
