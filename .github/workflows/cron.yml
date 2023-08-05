@@ -15,6 +15,11 @@ jobs:
     - name: Checkout código
       uses: actions/checkout@v2
 
+    - name: Configurar Git
+      run: |
+        git config --global user.email "gaspargomez2000@outlook.com"
+        git config --global user.name "ggomez0"
+        
     - name: Configurar Python
       uses: actions/setup-python@v2
       with:
@@ -34,8 +39,6 @@ jobs:
 
     - name: Subir WordCloud generada
       run: |
-        git config --global user.email "gaspargomez2000@outlook.com"
-        git config --global user.name "ggomez0"
         git add .
         git commit -m "WordCloud generado diario"
         git push origin master
