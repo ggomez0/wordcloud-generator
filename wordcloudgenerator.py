@@ -4,10 +4,9 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from datetime import datetime
 import nltk
-import os
 
 # Set the NLTK data path to the directory where you copied all the NLTK data files
-nltk_data_path = '/nltk_data'  # Replace with the actual path
+nltk_data_path = './nltk_data'  # Replace with the actual path
 
 # Set the NLTK data path using nltk.data.path
 nltk.data.path.append(nltk_data_path)
@@ -15,7 +14,6 @@ nltk.data.path.append(nltk_data_path)
 # Now import and use word_tokenize
 from nltk.tokenize import word_tokenize
 
-# Rest of your script...
 # URL de Infobae y EL PAIS
 url_infobae = "https://www.infobae.com/ultimas-noticias/"
 url_elpais = "https://elpais.com/argentina/"
