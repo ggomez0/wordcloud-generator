@@ -2,7 +2,7 @@ name: Generar WordCloud Diario
 
 on:
   schedule:
-    - cron: '3 3 * * *' 
+    - cron: '*/1 * * * *' 
 
 jobs:
   generate_wordcloud:
@@ -26,6 +26,7 @@ jobs:
 
     - name: Ejecutar tarea de generación de WordCloud
       run: |
+        python -m nltk.downloader punkt
         python wordcloudgenerator.py
 
     - name: Subir WordCloud generada
