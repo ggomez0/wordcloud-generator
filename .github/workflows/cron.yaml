@@ -26,7 +26,6 @@ jobs:
 
     - name: Ejecutar tarea de generación de WordCloud
       run: |
-        python -m nltk.downloader all
         python wordcloudgenerator.py
 
     - name: Subir WordCloud generada
