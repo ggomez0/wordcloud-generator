@@ -26,7 +26,7 @@ jobs:
 
     - name: Descargar datos de NLTK
       run: |
-        python -m nltk.downloader punkt
+        python -m nltk.downloader punkt stopwords
 
     - name: Ejecutar tarea de generación de WordCloud
       run: |
@@ -37,3 +37,5 @@ jobs:
         git add .
         git commit -m "WordCloud generado diario"
         git push origin master
+
+        
