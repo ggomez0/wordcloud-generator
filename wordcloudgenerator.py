@@ -3,12 +3,6 @@ import requests
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from datetime import datetime
-import nltk
-
-# Download the 'punkt' tokenizer data if not already downloaded
-nltk.download('punkt')
-
-# Now import and use word_tokenize
 from nltk.tokenize import word_tokenize
 
 # Rest of your script...
