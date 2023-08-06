@@ -38,8 +38,8 @@
     <script>
             document.addEventListener("DOMContentLoaded", function() {
             var fecha_actual_utc = new Date();
-            var desplazamiento_utc_menos3 = fecha_actual_utc.getTimezoneOffset() + 180; // 180 minutos = 3 horas
-            fecha_actual_utc.setMinutes(fecha_actual_utc.getMinutes() + desplazamiento_utc_menos3);
+            var desplazamiento_utc_menos3 = -3 * 60 * 60 * 1000; // 3 horas en milisegundos
+            fecha_actual_utc.setTime(fecha_actual_utc.getTime() + desplazamiento_utc_menos3);
             var fecha_actual = fecha_actual_utc.toISOString().slice(0, 10);
             document.getElementById("fecha_actual").textContent = fecha_actual;
             var img = document.getElementById("wordcloud_img");

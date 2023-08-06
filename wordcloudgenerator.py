@@ -47,7 +47,7 @@ tokenizado = word_tokenize(todo_el_texto)
 tokenizado_filtrado = [palabra for palabra in tokenizado if palabra.lower() not in stop_words]
 
 # Crear el WordCloud
-wordcloud = WordCloud(width=800, height=600).generate(" ".join(tokenizado_filtrado))
+wordcloud = WordCloud(width=1500, height=600).generate(" ".join(tokenizado_filtrado))
 plt.figure(figsize=(18, 10))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
