@@ -36,8 +36,11 @@
         <img id="wordcloud_img" src="" alt="WordCloud del día {fecha_actual}">
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var fecha_actual = new Date().toISOString().slice(0, 10);
+            document.addEventListener("DOMContentLoaded", function() {
+            var fecha_actual_utc = new Date();
+            var desplazamiento_utc_menos3 = fecha_actual_utc.getTimezoneOffset() + 180; // 180 minutos = 3 horas
+            fecha_actual_utc.setMinutes(fecha_actual_utc.getMinutes() - desplazamiento_utc_menos3);
+            var fecha_actual = fecha_actual_utc.toISOString().slice(0, 10);
             document.getElementById("fecha_actual").textContent = fecha_actual;
             var img = document.getElementById("wordcloud_img");
             img.src = "wordcloud/WordCloud - " + fecha_actual + ".png";
