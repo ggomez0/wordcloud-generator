@@ -47,8 +47,8 @@ tokenizado = word_tokenize(todo_el_texto)
 tokenizado_filtrado = [palabra for palabra in tokenizado if palabra.lower() not in stop_words]
 
 # Crear el WordCloud
-wordcloud = WordCloud(width=1500, height=600).generate(" ".join(tokenizado_filtrado))
-plt.figure(figsize=(18, 10))
+wordcloud = WordCloud(width=1900, height=900).generate(" ".join(tokenizado_filtrado))
+plt.figure(figsize=(10, 2))
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 fecha_actual = datetime.now().strftime("%Y-%m-%d")
