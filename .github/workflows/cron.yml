@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout código
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4.2.0
 
     - name: Configurar Git
       run: |
@@ -21,7 +21,7 @@ jobs:
         git config --global user.name "ggomez0"
 
     - name: Configurar Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: 3.x
 
