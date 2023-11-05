@@ -9,10 +9,10 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-
-- package-ecosystem: "pip"
+  - package-ecosystem: "pip"
     # Files stored in repository root
     directory: "/"
     schedule:
       interval: "daily"
+
 
