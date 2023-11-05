@@ -2,7 +2,7 @@ name: Generar WordCloud Diario
 
 on:
   schedule:
-    - cron: '50 16 * * *' 
+    - cron: '07 17 * * *' 
 
 jobs:
   generate_wordcloud:
@@ -27,7 +27,7 @@ jobs:
 
     - name: Instalar dependencias
       run: |
-        pip install requirements.txt
+        pip install -r requirements.txt
 
     - name: Instalar nltk
       run: |
