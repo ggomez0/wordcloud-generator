@@ -2,7 +2,7 @@ name: Generar WordCloud Diario
 
 on:
   schedule:
-    - cron: '3 3 * * *' 
+    - cron: '30 5 * * *' 
 
 jobs:
   generate_wordcloud:
@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout código
-      uses: actions/checkout@v4.2.0
+      uses: actions/checkout@v4
 
     - name: Configurar Git
       run: |
