@@ -2,7 +2,8 @@ name: Generar WordCloud Diario
 
 on:
   schedule:
-    - cron: '40 17 * * *' 
+    - cron: '15 16 * * *' 
+  workflow_dispatch:  
 
 jobs:
   generate_wordcloud:
@@ -20,14 +21,19 @@ jobs:
         git config --global user.email "gaspargomez2000@outlook.com"
         git config --global user.name "ggomez0"
 
+    - name: Configurar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'  # Puedes especificar la versión que desees
+
     - name: Configurar Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: 3.x
 
     - name: Instalar dependencias
       run: |
-        pip install -r requirements.txt
+        pip install -r .github/requirements.txt
 
     - name: Instalar nltk
       run: |
@@ -43,5 +49,3 @@ jobs:
         git add .
         git commit -m "WordCloud generado diario"
         git push origin main
-
-        
