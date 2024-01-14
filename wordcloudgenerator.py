@@ -54,6 +54,6 @@ plt.axis("off")
 fecha_actual = datetime.now().strftime("%Y-%m-%d")
 plt.title(f"WordCloud - {fecha_actual}")
 plt.tight_layout()
-ruta_guardado = f"wordcloud/Wordcloud - {fecha_actual}.png"
+ruta_guardado = f"public/wordcloud/Wordcloud - {fecha_actual}.png"
 plt.savefig(ruta_guardado, transparent=True)
 plt.show()
