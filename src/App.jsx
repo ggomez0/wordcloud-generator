@@ -23,7 +23,7 @@ function App() {
     if (dateValue) {
       const formattedDate = new Date(dateValue).toISOString().slice(0, 10);
       document.getElementById("fecha_actual").textContent = formattedDate;
-      setWordcloudImage("/public/wordcloud/Wordcloud - " + formattedDate + ".png");
+      setWordcloudImage("/wordcloud/Wordcloud - " + formattedDate + ".png");
     }
   };
   return (
