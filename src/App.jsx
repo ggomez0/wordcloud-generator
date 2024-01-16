@@ -11,8 +11,8 @@ function App() {
     fecha_actual_utc.setTime(fecha_actual_utc.getTime() + desplazamiento_utc_menos3);
     var fecha_actual = fecha_actual_utc.toISOString().slice(0, 10);
     document.getElementById("fecha_actual").textContent = fecha_actual;
-    setWordcloudImage("/wordcloud/Wordcloud - " + fecha_actual + ".png"); // Corregido a "fecha_actual"
-    setSelectedDate(fecha_actual); // Asegúrate de estar utilizando la variable correcta aquí
+    setWordcloudImage("/wordcloud/Wordcloud - " + fecha_actual + ".png");
+    setSelectedDate(fecha_actual); 
 }, [currentDate]);
 
   const handleDateChange = (event) => {
