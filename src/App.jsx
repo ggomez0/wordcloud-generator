@@ -5,17 +5,15 @@ function App() {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [wordcloudImage, setWordcloudImage] = useState("");
 
-  useEffect(() => {
+ useEffect(() => {
     var fecha_actual_utc = new Date();
     var desplazamiento_utc_menos3 = -3 * 60 * 60 * 1000; // 3 horas en milisegundos
     fecha_actual_utc.setTime(fecha_actual_utc.getTime() + desplazamiento_utc_menos3);
     var fecha_actual = fecha_actual_utc.toISOString().slice(0, 10);
     document.getElementById("fecha_actual").textContent = fecha_actual;
-    // var img = document.getElementById("wordcloud_img");
-    // img.src = "wordcloud/Wordcloud - " + fecha_actual + ".png";
-    // img.alt = img.alt.replace("{fecha_actual}", fecha_actual);
-    setWordcloudImage("wordcloud/Wordcloud - " + currentDate.toISOString().slice(0, 10) + ".png");
-  }, [currentDate]);
+    setWordcloudImage("/public/wordcloud/Wordcloud - " + fecha_actual + ".png"); // Corregido a "fecha_actual"
+    setSelectedDate(fecha_actual); // Asegúrate de estar utilizando la variable correcta aquí
+}, [currentDate]);
 
   const handleDateChange = (event) => {
     const dateValue = event.target.value;
@@ -25,7 +23,7 @@ function App() {
     if (dateValue) {
       const formattedDate = new Date(dateValue).toISOString().slice(0, 10);
       document.getElementById("fecha_actual").textContent = formattedDate;
-      setWordcloudImage("/wordcloud/Wordcloud - " + formattedDate + ".png");
+      setWordcloudImage("/public/wordcloud/Wordcloud - " + formattedDate + ".png");
     }
   };
   return (
@@ -39,13 +37,13 @@ function App() {
             type="date"
             className="max-w-32 flex m-auto"
             onChange={handleDateChange}
-            value={selectedDate || ""}
+            value={selectedDate}
           />  </div>
           <img
             id="wordcloud_img"
             className='m-auto w-11/12'
             src={wordcloudImage}
-            alt={`WordCloud del día ${selectedDate || ""}`}
+            alt={`WordCloud del día ${selectedDate}`}
           />
       
       </div>
