@@ -24,20 +24,21 @@ jobs:
     - name: Configurar Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '14'  # Puedes especificar la versión que desees
+        node-version: '14'  
 
     - name: Configurar Python
       uses: actions/setup-python@v5
       with:
-        python-version: 3.x
+        python-version: "3.x"
 
     - name: Instalar dependencias
       run: |
+        pip install --upgrade pip
         pip install -r .github/requirements.txt
 
-    - name: Instalar nltk
+    - name: Descargar recursos NLTK
       run: |
-        python mynltk.py
+        python -m nltk.downloader wordnet
 
     - name: Ejecutar tarea de generación de WordCloud
       run: |
