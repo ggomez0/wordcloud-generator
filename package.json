@@ -25,7 +25,7 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
-    "vite": "^6.3.4"
+    "vite": "^6.3.6"
   },
   "description": "[![Generar WordCloud Diario](https://github.com/ggomez0/WordCloud-Generator/actions/workflows/cron.yml/badge.svg)](https://github.com/ggomez0/WordCloud-Generator/actions/workflows/cron.yml)",
   "main": "postcss.config.js",
